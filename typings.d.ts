@@ -6,14 +6,31 @@ export interface Post {
         name: string;
         image: string;
     };
+    comments: Comment[];
     description: string;
     mainImage: {
         asset: {
             url: string;
         };
     };
-    slug:{
-        current:string;
+    slug: {
+        current: string;
     };
-    body:[object]
+    body: [object]
+}
+
+export interface Comment {
+    _id: string;
+    _rev: string;
+    _type: string;
+    _createdAt: string;
+    _updatedAt: string;
+    approved: boolean;
+    email: string;
+    name: string,
+    comment: string;
+    post: {
+        _ref: string;
+        _type: string;
+    };
 }
